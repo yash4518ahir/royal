@@ -1,0 +1,89 @@
+import axios from "axios";
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify"; // Import Toastify
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import "./Signup.css"; // Import CSS
+
+const Signup = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); // For button disable
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Disable button while request is pending
+
+    try {
+      const response = await axios.post("http://localhost:3000/user", {
+        username,
+        email,  
+        password,
+      });
+
+      toast.success("Signup successful! 🎉"); // Success notification
+      console.log("Signup successful:", response.data);
+
+      // Optionally, redirect to login page after signup
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 2000);
+    } catch (error) {
+      console.error("Error signing up:", error.response?.data || error);
+
+      if (error.response?.data?.message) {
+        toast.error(error.response.data.message); // Show backend error message
+      } else {
+        toast.error("Signup failed. Please try again.");
+      }
+    } finally {
+      setLoading(false); // Enable button again
+    }
+  };
+
+  return (
+    <div className="signup-container">
+      <div className="form-box">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label>Username:</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className="btn" disabled={loading}>
+            {loading ? "Signing Up..." : "Sign Up"}
+          </button>
+        </form>
+        <p>
+          Already have an account? <a href="/login">Login</a>
+        </p>
+      </div>
+      <ToastContainer /> {/* Toastify Container for notifications */}
+    </div>
+  );
+};
+
+export default Signup;

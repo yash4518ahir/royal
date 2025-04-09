@@ -1,0 +1,113 @@
+/* Signup Page Styles - Anime/Gaming Theme */
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d0d0d; /* Dark cyberpunk background */
+}
+
+.signup-card {
+  background: rgba(13, 13, 13, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 102, 0.8);
+  width: 350px;
+  text-align: center;
+  color: white;
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  background: #00f5d4; /* Neon Cyan */
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px #00f5d4;
+}
+
+h1 {
+  color: #00f5d4;
+  text-shadow: 0 0 10px #00f5d4;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ff006e;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #6a00f4;
+  border-radius: 5px;
+  font-size: 14px;
+  background: #1a1a1a;
+  color: white;
+  box-shadow: 0 0 5px rgba(255, 0, 102, 0.6);
+}
+
+.signup-btn {
+  width: 100% ;
+  padding: 12px ;
+  background: linear-gradient(90deg, #ff006e, #6a00f4) ;
+  color: white ;
+  border: none ;
+  border-radius: 12px ;
+  font-size: 1rem ;
+  font-weight: 600 ;
+  cursor: pointer ;
+  transition: all 0.3s ease ;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8) ;
+  box-shadow: 0 0 10px rgba(255, 0, 110, 0.8) !important;
+  text-align: center !important;
+  margin-top: 1rem !important;
+
+  /* Browser ka default styling remove karne ke liye  */
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+} 
+
+.signup-btn:hover {
+  background: linear-gradient(90deg, #00f5d4, #8338ec) !important;
+  box-shadow: 0 0 15px #00f5d4 !important;
+  transform: translateY(-2px) !important;
+}
+
+.signup-btn:active {
+  transform: translateY(0) !important;
+}
+
+.signup-link p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+.signup-link a {
+  color: #00f5d4;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 5px #00f5d4;
+}
+
+.signup-link a:hover {
+  color: #ff5400;
+  text-shadow: 0 0 10px #ff5400;
+}

@@ -1,0 +1,72 @@
+.user-sidebar {
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(135deg, #a855f7, #ec4899); /* Lavender-Pink Gradient */
+  padding: 20px 15px;
+  color: white;
+  box-shadow: 2px 0 10px rgba(168, 85, 247, 0.5); /* Neon Glow Effect */
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar hidden state */
+.user-sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* Sidebar button styling */
+.sidebar-toggle {
+  position: absolute;
+  top: 15px;
+  right: -40px;
+  width: 35px;
+  height: 35px;
+  background: #a855f7;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+  transition: background 0.3s ease-in-out;
+}
+
+.sidebar-toggle:hover {
+  background: #ec4899;
+}
+
+/* Sidebar Items */
+.sidebar-item {
+  padding: 12px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-item:hover,
+.sidebar-item.active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  text-shadow: 0 0 8px #ffffff, 0 0 15px #ff80bf;
+}
+
+/* Main content area shift when sidebar opens */
+.app-main {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.app-main.sidebar-closed {
+  margin-left: 0;
+}

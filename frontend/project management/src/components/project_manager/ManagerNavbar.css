@@ -1,0 +1,37 @@
+.manager-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: calc(100% - 250px);
+  left: 250px;
+  top: 0;
+  height: 60px;
+}
+
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 22px;
+  margin-left: 15px;
+  cursor: pointer;
+  color: #555;
+}
+
+.profile-icon {
+  font-size: 24px;
+}
